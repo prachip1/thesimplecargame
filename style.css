@@ -1,0 +1,76 @@
+*{
+    margin:0;
+    padding:0;
+    overflow: hidden;
+}
+
+#game{
+    height: 600px;
+    width: 360px;
+    border: 1px solid black;
+    background:url("images/track.jpg");
+    background-size: cover;
+    
+    margin: 1rem auto;
+    overflow: hidden;
+
+}
+#onecar{
+    height: 100px;
+    width: 130px;
+ 
+    position: relative;
+    top:0;
+    left:0;
+    animation: start 2s linear infinite;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#onecar img{
+    height: 100px;
+}
+
+@keyframes start{
+    0%{
+        top:0px;
+
+    }
+    100%{
+        top: 501px;
+    }
+}
+
+#secondcar{
+    height: 100px;
+    width: 130px;
+    text-align: center;
+    
+    position: relative;
+    top: 360px;
+    left: 115px;
+    border-radius: 5px;
+}
+
+#secondcar img{
+    height: 100px;
+}
+
+#result{
+    height: 200px;
+    width: 400px;
+    background-color: cornflowerblue;
+    font-size: 30px;
+    color:White;
+    display: none;
+}
+
+#score{
+    font-size: 2.2rem;
+    color: brown;
+}
+
+#btn{
+    cursor: pointer;
+    text-transform: uppercase;
+}
