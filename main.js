@@ -5,7 +5,13 @@ var result = document.getElementById("result");
 
 const score = document.getElementById("score");
  var counter = 0;
+
+ var sound = document.getElementById("sound");
+ var gameoversound = document.getElementById("gameoversound");
+var restartsound = document.getElementById("restartsound");
 //one car
+
+
 
 onecar.addEventListener("animationiteration", function(){
     var random = ((Math.round(Math.random()*3))* 130);
@@ -22,13 +28,17 @@ if(e.keyCode == '39'){
     var raceCarLeft = parseInt(window.getComputedStyle(secondcar).getPropertyValue("left"));
     if (raceCarLeft < 260) 
     {secondcar.style.left =(raceCarLeft + 130) + "px"};
-
+     sound.play();
 }
 
 if(e.keyCode == "37"){
     var raceCarLeft = parseInt(window.getComputedStyle(secondcar).getPropertyValue("left"));
+    
     if (raceCarLeft > 0) 
-    {secondcar.style.left =(raceCarLeft - 130) + "px"};
+    {secondcar.style.left =(raceCarLeft - 130) + "px"
+    };
+    sound.play();
+   
 }
 
 
@@ -42,14 +52,18 @@ if(e.keyCode == "37"){
     var onecarLeft = parseInt(window.getComputedStyle(onecar).getPropertyValue("left"));
     var secondCarLeft = parseInt(window.getComputedStyle(secondcar).getPropertyValue("left"));
 
-    if((onecarLeft === secondCarLeft) && (onecarTop > 250) && (onecarTop < 450)){
+    
+    if((onecarLeft === secondCarLeft) && (onecarTop > 408) && (onecarTop < 503)){
+      
         result.style.display = "block";
+      
+        gameoversound.play();
+      
         game.style.display = "none";
        score.innerHTML = `score: ${counter}`;
-
         counter = 0;
     }
 
-
+    
 
 },10)
